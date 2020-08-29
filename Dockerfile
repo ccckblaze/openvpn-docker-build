@@ -10,6 +10,7 @@ RUN rm /usr/local/openvpn_as/lib/python2.7/site-packages/pyovpn-2.0-py2.7.egg
 RUN cp ./openvpn-docker-build/openvpn/files/pyovpn-2.0-py2.7.egg /usr/local/openvpn_as/lib/python2.7/site-packages/pyovpn-2.0-py2.7.egg
 RUN rm -R /openvpn-docker-build
 
-EXPOSE 943/tcp 443/tcp 1194/udp
+ADD start.sh /
+RUN chmod +x /start.sh
 
-CMD ["/usr/local/openvpn_as/scripts/openvpnas", "-n"]
+CMD ["/start.sh"]
