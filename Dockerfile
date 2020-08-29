@@ -17,10 +17,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y php apache2 curl
 RUN apt-get install nano
 RUN apt install net-tools
 
-RUN mkdir -p /dev/net
-# RUN mknod /dev/net/tun c 10 200
-# RUN chmod 600 /dev/net/tun
-
 ADD start.sh /
 RUN chmod +x /start.sh
 
